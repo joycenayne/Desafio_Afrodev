@@ -21,8 +21,3 @@ def start_menu(sports):
         if key == -1:
             flag = False
             main.menu_principal()
-
-"""
-salvar em outro lugar
-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
-"""
