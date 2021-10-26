@@ -18,7 +18,6 @@ def menu_principal():
     else:
         path_topics(menus.m_major[key])
 
-  
 def path_topics(choice):
     ans = choice.lower()
     if ans == 'atletas':

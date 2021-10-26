@@ -5,7 +5,8 @@ import main
 
 def listing_coaches(dict):
     list_compr_coaches = [(chave, len(valor)) for chave, valor in dict.items()]
-    return list_compr_coaches
+    sorted_list_compr_coaches = sorted(list_compr_coaches, key=lambda e: e[1], reverse=True)
+    return sorted_list_compr_coaches
 
 def coaches_by_country(data):
     dic_coaches = data.groupby(by='NOC').groups
@@ -15,7 +16,7 @@ def coaches_by_country(data):
 def total_output(data):
     list_coaches = coaches_by_country(data)
     list_format = funcs.format_string(list_coaches)
-    print(f"A seguir, quantidade de treinadores por país: {list_format}")
+    print(f"\nA seguir, quantidade de treinadores por país: \n {list_format}")
 
 def country_max_value_coach(data):
     coaches_country = coaches_by_country(data)
@@ -29,8 +30,7 @@ def coaches_by_sport(data):
     dic_coaches = data.groupby(by='Discipline').groups
     list_coaches = listing_coaches(dic_coaches)
     list_format = funcs.format_string(list_coaches)
-    print(f"A seguir, quantidade de treinadores por esportes: {list_format}")
-
+    print(f"\nA seguir, quantidade de treinadores por esportes: \n{list_format}")
 
 def start_menu(coaches):
     flag = True

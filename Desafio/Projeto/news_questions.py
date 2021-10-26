@@ -15,7 +15,7 @@ def brazil_vs_top3(data):
     x_column = brazil + top3_countries
     y_column = brazil_medals + top3_medals
 
-    funcs.graphics_plot(x_column, y_column, "Brasil VS TOP3", "Países", "Medalhas de Ouro")
+    funcs.graphics_plot(x_column, y_column, "Brasil VS TOP3", "Países", "Medalhas de Ouro", rotation=10)
 
 def sport_max_brazilians(data):
     ath_sports = data[data.NOC == 'Brazil'].groupby(by="Discipline").count()
@@ -30,9 +30,7 @@ def sport_max_brazilians(data):
     y_column = [count_ath_br, top_count]
     title = "Comparativo do número de atletas em {}".format(sport_br)
 
-    funcs.graphics_plot(x_column, y_column, title, "Países", "Número de atletas")
-
-
+    funcs.graphics_plot(x_column, y_column, title, "Países", "Número de atletas", rotation=0)
 
 def start_menu(news_quest):
     flag = True

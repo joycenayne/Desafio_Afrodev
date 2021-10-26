@@ -44,12 +44,12 @@ def format_string(list_string):
     return text_formated
 
 
-def graphics_plot(x_column, y_column, title, x_label, y_label):
+def graphics_plot(x_column, y_column, title, x_label, y_label, rotation):
     plt.ylabel(y_label)
     plt.xlabel(x_label)
     plt.title(title)
 
-    plt.xticks(rotation=90)
+    plt.xticks(rotation=rotation)
     plt.ylim(0,np.max(y_column)+20)
 
     bar_graph = plt.bar(x_column, y_column, width=0.3)
