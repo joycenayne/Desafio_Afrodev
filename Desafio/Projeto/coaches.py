@@ -28,7 +28,7 @@ def country_max_value_coach(data):
 def coaches_by_sport(data):
     dic_coaches = data.groupby(by='Discipline').groups
     list_coaches = listing_coaches(dic_coaches)
-    list_format = funcs.format_string(listing_coaches)
+    list_format = funcs.format_string(list_coaches)
     print(f"A seguir, quantidade de treinadores por esportes: {list_format}")
 
 

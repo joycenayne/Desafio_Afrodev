@@ -24,6 +24,7 @@ def start_menu(athletes):
         dictionary = menus.m_athletes
         data_atheletes = pd.read_excel("../Arquivos/Athletes.xlsx")
         data_gender = pd.read_excel("../Arquivos/EntriesGender.xlsx")
+        
         print(f"\nMenu {topic}")
         
         key = funcs.input_topics(dictionary)

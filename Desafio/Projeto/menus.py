@@ -7,7 +7,8 @@ m_major = {
         3: 'Esportes',
         4: 'Times',
         5: 'Medalhas',
-        6: 'Sair'
+        6: 'Analises',
+        7: 'Sair'
     }
 
 m_athletes = {
@@ -48,4 +49,10 @@ m_sports = {
     3: 'Lista de esportes com mais homens que mulheres',
     4: 'Lista de esportes com mais mulheres que homens.',
     5: 'Sair desta categoria'
+}
+
+m_news_questions = {
+    1: 'Brasil VS TOP3 do ranking de medalhas ',
+    2: 'Esporte com mais atletas brasileiros',
+    3: 'Sair'
 }

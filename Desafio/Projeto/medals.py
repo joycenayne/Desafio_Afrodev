@@ -1,4 +1,3 @@
-from Desafio.Projeto.teams import total_teams_by_sports_country
 import funcs_system as funcs
 import pandas as pd 
 import menus
@@ -21,28 +20,31 @@ def list_total_medals_country(data):
 
 def country_max_gold(data):
     country = data[data["Gold"] == data["Gold"].max()]["Team/NOC"][0]
-    print(f"O país com mais medalhas de ouro é {country}")
+    medal = data[data["Gold"] == data["Gold"].max()]["Gold"][0]
+    print(f"O país com mais medalhas de ouro é {country}, com {medal} medalhas")
 
 def country_max_silver(data):
     country = data[data["Silver"] == data["Silver"].max()]["Team/NOC"][0]
-    print(f"O país com mais medalhas de prata é {country}")
+    medal = data[data["Silver"] == data["Silver"].max()]["Silver"][0]
+    print(f"O país com mais medalhas de prata é {country}, com {medal} medalhas")
 
 def country_max_bronze(data):
     country = data[data["Bronze"] == data["Bronze"].max()]["Team/NOC"][0]
-    print(f"O país com mais medalhas de bronze é {country}")
+    medal = data[data["Bronze"] == data["Bronze"].max()]["Bronze"][0]
+    print(f"O país com mais medalhas de bronze é {country}, com {medal} medalhas")
 
 def countries_min_gold(data):
-    countries = data[data["Gold"] == data["Gold"].min()]["Team/NOC"]
+    countries = list(data[data["Gold"] == data["Gold"].min()]["Team/NOC"])
     countries = funcs.format_string(countries)
     print(f"Os países com menos medalhas de ouro são: {countries}")
 
 def countries_min_silver(data):
-    countries = data[data["Silver"] == data["Silver"].min()]["Team/NOC"]
+    countries = list(data[data["Silver"] == data["Silver"].min()]["Team/NOC"])
     countries = funcs.format_string(countries)
     print(f"Os países com menos medalhas de prata são: {countries}")
 
 def countries_min_bronze(data):
-    countries = data[data["Bronze"] == data["Bronze"].min()]["Team/NOC"]
+    countries = list(data[data["Bronze"] == data["Bronze"].min()]["Team/NOC"])
     countries = funcs.format_string(countries)
     print(f"Os países com menos medalhas de bronze são: {countries}")
 
@@ -79,6 +81,6 @@ def start_menu(medals):
             countries_min_bronze(data_medals)
         elif key == 8:
             ranking_total_medals(data_medals)
-        if key == -1:
+        else:
             flag = False
             main.menu_principal()
